@@ -116,9 +116,10 @@ await ch.run('CREATE TABLE my_table (name String, num UInt64) ENGINE=Log ')
 будет произведена при достижении лимита буффера, устанавливаемого параметром конструктора `buffer_limit`.
 
 **new**
+Take separate pieces(lists, dictionaries etc.) out of your object and push them one by one to your table:
 
 ```python
-with ch.table('tablename') as w:
+with ch.table('database.tablename') as w:
     for rec in recs:
         w.push(rec)
 ```
